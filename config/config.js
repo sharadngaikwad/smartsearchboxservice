@@ -11,6 +11,16 @@ const watsonCoversation = {
     workspacePassword: 'dQ1QR7W26I3Y'
 };
 
+const watsonDiscovery = {
+    username: 'cce8943a-25a5-4cdf-bb87-053ed95b3214',
+    password: 'y0oMfqx6vRo3',
+    version: 'v1',
+    version_date: '2016-12-01',
+    environment_id: '3909801e-bb74-421c-a395-e4f09eac7f1a',
+    collection_id: '3432ef6b-3e24-4dbb-b784-850ec82b24db'
+};
+
 module.exports = {
-    watsonCoversation: watsonCoversation
+    watsonCoversation: watsonCoversation,
+    watsonDiscovery: watsonDiscovery
 };
