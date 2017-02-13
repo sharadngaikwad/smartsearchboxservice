@@ -14,19 +14,20 @@
  * limitations under the License.
  */
 
-'use strict';
+var path = require('path');
+// load default variables for testing
+require('dotenv').config({ path: path.join(__dirname, '../../.env.example') });
 
-const express = require('express'); // app server
-const bodyParser = require('body-parser'); // parser for post requests
-const messageHandler = require('./lib/message_handler');
+var app = require('../../app');
+var request = require('supertest');
 
-const app = express();
+describe('express', function() {
+  it('load home page when GET /', function() {
+    request(app).get('/').expect(200);
+  });
 
-// Bootstrap application settings
-app.use(express.static('./public')); // load UI from public folder
-app.use(bodyParser.json());
+  it('404 when page not found', function() {
+    request(app).get('/foo/bar').expect(404);
+  });
 
-app.post('/api/message', messageHandler.processMessage);
-
-
-module.exports = app;
+});

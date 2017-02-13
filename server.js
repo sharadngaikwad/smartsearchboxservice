@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 /**
  * Copyright 2015 IBM Corp. All Rights Reserved.
  *
@@ -16,17 +17,10 @@
 
 'use strict';
 
-const express = require('express'); // app server
-const bodyParser = require('body-parser'); // parser for post requests
-const messageHandler = require('./lib/message_handler');
+const server = require('./app');
+const port = process.env.PORT || process.env.VCAP_APP_PORT || 3000;
 
-const app = express();
-
-// Bootstrap application settings
-app.use(express.static('./public')); // load UI from public folder
-app.use(bodyParser.json());
-
-app.post('/api/message', messageHandler.processMessage);
-
-
-module.exports = app;
+server.listen(port, (() => {
+    // eslint-disable-next-line
+    console.log('Server running on port: %d', port);
+}));
