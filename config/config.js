@@ -8,9 +8,9 @@ const watsonCoversation = {
     url: 'https://gateway.watsonplatform.net/conversation/api',
     version_date: '2016-10-21',
     version: 'v1',
-    workspaceId: '16d61bf4-f78a-4b62-a848-6cc6d808609b',
-    workspaceUserName: '6e9dac24-0778-4b58-9a5e-e19d8589e989',
-    workspacePassword: 'dQ1QR7W26I3Y'
+    workspaceId: 'c0c41ffa-30d8-42d1-a681-02a004f41d0c',
+    workspaceUserName: 'c715a3d3-4510-4fca-9a1e-73b29e018291',
+    workspacePassword: 'gseiGfBJ5CNI'
 };
 
 //Config values for Watson Discovery Service running in Bluemix
