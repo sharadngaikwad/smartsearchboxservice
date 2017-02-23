@@ -17,10 +17,22 @@
 'use strict';
 
 const express = require('express'); // app server
+const http = require('http');
+const WebSocket  = require('ws');
 const bodyParser = require('body-parser'); // parser for post requests
 const messageHandler = require('./lib/message_handler');
 
 const app = express();
+const server = http.createServer(app);
+const wss = new WebSocket.Server({ server });
+
+
+wss.on('connection', ws => {
+    ws.on('message',msg => messageHandler.processMessage(msg, ws));
+    ws.send(JSON.stringify({
+        result : "Hey there. How can I help you today?"
+    }));
+});
 
 // Bootstrap application settings
 app.use(express.static('./public')); // load UI from public folder
@@ -30,4 +42,4 @@ app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:500
 app.post('/api/message', messageHandler.processMessage);
 
 
-module.exports = app;
+module.exports = server;
