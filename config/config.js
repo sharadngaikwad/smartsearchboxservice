@@ -8,7 +8,7 @@ const watsonCoversation = {
     url: 'https://gateway.watsonplatform.net/conversation/api',
     version_date: '2016-10-21',
     version: 'v1',
-    workspaceId: 'c0c41ffa-30d8-42d1-a681-02a004f41d0c',
+    workspaceId: 'b0b6e45c-f6a9-4acb-834e-593680bde9df',
     workspaceUserName: 'c715a3d3-4510-4fca-9a1e-73b29e018291',
     workspacePassword: 'gseiGfBJ5CNI'
 };
@@ -27,7 +27,13 @@ const watsonDiscovery = {
     }
 };
 
+const cloudant = {
+    username: "844d8c57-58b6-4391-8b52-50492bc81db2-bluemix",
+    password: "acbb0d4c8c5a251db060d3890fc929afbb732c80ff7af948db5d4db512f327ea"
+};
+
 module.exports = {
     watsonCoversation: watsonCoversation,
-    watsonDiscovery: watsonDiscovery
+    watsonDiscovery: watsonDiscovery,
+    cloudant: cloudant
 };
