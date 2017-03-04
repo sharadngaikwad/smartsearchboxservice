@@ -15,14 +15,14 @@ const watsonCoversation = {
 
 //Config values for Watson Discovery Service running in Bluemix
 const watsonDiscovery = {
-    username: 'cce8943a-25a5-4cdf-bb87-053ed95b3214',
-    password: 'y0oMfqx6vRo3',
+    username: 'b11da645-d521-45a4-876b-45ba7c05ebc5',
+    password: 'j8xR2DS3Uj5H',
     version: 'v1',
     version_date: '2016-12-01',
-    environment_id: '36eee3d4-fa56-4712-85d7-a0e1b34e93c3',
+    environment_id: 'ac74cff0-5b41-4f53-8bdb-0a9c6e188093',
     defaultCollection: 'customerDB-UK',
     collection_id: {
-        'customerDB-UK': 'a4b412e5-194c-49bc-9055-926f11e0db37',
+        'customerDB-UK': '55bd7043-dc5c-4517-bb62-76e6659d2694',
         'cars': '52e46aeb-3d4a-4d0d-8a5f-69485a3285da'
     }
 };
