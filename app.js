@@ -29,9 +29,9 @@ const wss = new WebSocket.Server({ server });
 
 wss.on('connection', ws => {
     ws.on('message',msg => messageHandler.processMessage(msg, ws));
-    ws.send(JSON.stringify({
+    /*ws.send(JSON.stringify({
         result : "Hey there. How can I help you today?"
-    }));
+    }));*/
 });
 
 // Bootstrap application settings
