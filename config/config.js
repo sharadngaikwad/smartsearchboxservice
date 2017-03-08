@@ -10,7 +10,7 @@ const watsonCoversation = {
     version: 'v1',
     workspaceId: '8dd2e891-2b13-41b7-9737-009a9d9e382b',
     workspaceUserName: 'c715a3d3-4510-4fca-9a1e-73b29e018291',
-    workspacePassword: '/dashboard'
+    workspacePassword: 'gseiGfBJ5CNI'
 };
 
 //Config values for Watson Discovery Service running in Bluemix
