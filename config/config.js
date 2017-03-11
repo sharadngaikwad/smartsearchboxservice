@@ -40,9 +40,12 @@ const bwl = {
     authToken: 'c3VyeW1yMDFAaW4uaWJtLmNvbTpzbWFydGVrQDEyMw=='
 };
 
+const hostUrl = 'https://smartsearchboxservice.mybluemix.net';
+
 module.exports = {
     watsonCoversation: watsonCoversation,
     watsonDiscovery: watsonDiscovery,
     cloudant: cloudant,
-    bwl: bwl
+    bwl: bwl,
+    hostUrl: hostUrl
 };

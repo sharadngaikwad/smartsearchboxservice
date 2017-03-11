@@ -21,6 +21,7 @@ const http = require('http');
 const WebSocket  = require('ws');
 const bodyParser = require('body-parser'); // parser for post requests
 const messageHandler = require('./lib/message_handler');
+const bwl = require('./lib/blueworkslive');
 
 const app = express();
 const server = http.createServer(app);
@@ -39,7 +40,7 @@ app.use(express.static('./public')); // load UI from public folder
 app.use(bodyParser.json({limit: "50mb"}));
 app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
 
-app.post('/api/message', messageHandler.processMessage);
+app.get('/image/:imageName', bwl.imageFromBWL);
 
 
 module.exports = server;
