@@ -8,7 +8,7 @@ const watsonCoversation = {
     url: 'https://gateway.watsonplatform.net/conversation/api',
     version_date: '2016-10-21',
     version: 'v1',
-    workspaceId: '8dd2e891-2b13-41b7-9737-009a9d9e382b',
+    workspaceId: 'b0b6e45c-f6a9-4acb-834e-593680bde9df',
     workspaceUserName: 'c715a3d3-4510-4fca-9a1e-73b29e018291',
     workspacePassword: 'gseiGfBJ5CNI'
 };
@@ -34,8 +34,15 @@ const cloudant = {
     dbName: 'cmdb'
 };
 
+//TODO: Need to get token of a user who has access through all workspaces in BWL
+const bwl = {
+    url: 'https://ibm.blueworkslive.com/scr/api/FileDownload?fileItemId=',
+    authToken: 'c3VyeW1yMDFAaW4uaWJtLmNvbTpzbWFydGVrQDEyMw=='
+};
+
 module.exports = {
     watsonCoversation: watsonCoversation,
     watsonDiscovery: watsonDiscovery,
-    cloudant: cloudant
+    cloudant: cloudant,
+    bwl: bwl
 };
