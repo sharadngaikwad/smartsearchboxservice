@@ -8,7 +8,7 @@ const watsonCoversation = {
     url: 'https://gateway.watsonplatform.net/conversation/api',
     version_date: '2016-10-21',
     version: 'v1',
-    workspaceId: 'b0b6e45c-f6a9-4acb-834e-593680bde9df',
+    workspaceId: '8dd2e891-2b13-41b7-9737-009a9d9e382b',
     workspaceUserName: 'c715a3d3-4510-4fca-9a1e-73b29e018291',
     workspacePassword: 'gseiGfBJ5CNI'
 };
@@ -31,13 +31,20 @@ const watsonDiscovery = {
 const cloudant = {
     username: "844d8c57-58b6-4391-8b52-50492bc81db2-bluemix",
     password: "acbb0d4c8c5a251db060d3890fc929afbb732c80ff7af948db5d4db512f327ea",
-    dbName: 'cmdb'
+    dbName: 'incident'
 };
 
 //TODO: Need to get token of a user who has access through all workspaces in BWL
+//Config values for BlueWorksLive
 const bwl = {
     url: 'https://ibm.blueworkslive.com/scr/api/FileDownload?fileItemId=',
     authToken: 'c3VyeW1yMDFAaW4uaWJtLmNvbTpzbWFydGVrQDEyMw=='
+};
+
+//Config values for ServiceNOW
+const snow = {
+    url: 'https://hclmt.service-now.com/api/now/v1/table/incident',
+    authToken: 'S3VsZGlwLkt1bWFyQGhvbmRhLWV1LmNvbTpIb25kYUAzMjE='
 };
 
 const hostUrl = 'https://smartsearchboxservice.mybluemix.net';
@@ -47,5 +54,6 @@ module.exports = {
     watsonDiscovery: watsonDiscovery,
     cloudant: cloudant,
     bwl: bwl,
+    snow: snow,
     hostUrl: hostUrl
 };
