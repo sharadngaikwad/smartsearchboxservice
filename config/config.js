@@ -22,7 +22,7 @@ const watsonDiscovery = {
     environment_id: 'ac74cff0-5b41-4f53-8bdb-0a9c6e188093',
     defaultCollection: 'customerDB-UK',
     collection_id: {
-        'customerDB-UK': '55bd7043-dc5c-4517-bb62-76e6659d2694',
+        'customerDB-UK': 'd69e34e5-0187-4795-8ce0-bc7b8adc73dd',
         'cars': '52e46aeb-3d4a-4d0d-8a5f-69485a3285da'
     }
 };
