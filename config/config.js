@@ -53,6 +53,7 @@ const alchemy = {
     "apikey": "36ec3cbc099b132b3dd5eb56b22a90ca3a931516"
 };
 
+//Config values for Watson Retrieve and Rank Service
 const retrieveAndRank = {
     "username": "9834506d-74ab-4ff1-b434-f5699a8cb1f0",
     "password": "iSVaCscka4d6",
@@ -60,6 +61,7 @@ const retrieveAndRank = {
     "collection_name": 'tess'
 };
 
+//Config values for Redis cache
 const redis = {
     url : 'redis://admin:OOQJXRSAFFKVXMMQ@bluemix-sandbox-dal-9-portal.7.dblayer.com:25114'
 };
