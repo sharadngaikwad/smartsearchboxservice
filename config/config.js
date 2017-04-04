@@ -22,7 +22,7 @@ const watsonDiscovery = {
     environment_id: 'ac74cff0-5b41-4f53-8bdb-0a9c6e188093',
     defaultCollection: 'customerDB-UK',
     collection_id: {
-        'customerDB-UK': 'd69e34e5-0187-4795-8ce0-bc7b8adc73dd',
+        'customerDB-UK': '293f3445-116b-426b-9965-897f8842b2ab',
         'cars': '52e46aeb-3d4a-4d0d-8a5f-69485a3285da'
     }
 };
@@ -47,6 +47,23 @@ const snow = {
     authToken: 'S3VsZGlwLkt1bWFyQGhvbmRhLWV1LmNvbTpIb25kYUAzMjE='
 };
 
+//Config values for Alchemy service
+const alchemy = {
+    "url": "https://gateway-a.watsonplatform.net/calls",
+    "apikey": "36ec3cbc099b132b3dd5eb56b22a90ca3a931516"
+};
+
+const retrieveAndRank = {
+    "username": "9834506d-74ab-4ff1-b434-f5699a8cb1f0",
+    "password": "iSVaCscka4d6",
+    "cluster_id": 'sc92b858cb_c131_4a1c_ba7d_efedf8d4df06',
+    "collection_name": 'tess'
+};
+
+const redis = {
+    url : 'redis://admin:OOQJXRSAFFKVXMMQ@bluemix-sandbox-dal-9-portal.7.dblayer.com:25114'
+};
+
 const hostUrl = 'https://smartsearchboxservice.mybluemix.net';
 
 module.exports = {
@@ -55,5 +72,8 @@ module.exports = {
     cloudant: cloudant,
     bwl: bwl,
     snow: snow,
-    hostUrl: hostUrl
+    alchemy: alchemy,
+    retrieveAndRank: retrieveAndRank,
+    hostUrl: hostUrl,
+    redis: redis
 };

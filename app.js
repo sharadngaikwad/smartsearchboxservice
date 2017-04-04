@@ -18,29 +18,26 @@
 
 const express = require('express'); // app server
 const http = require('http');
-const WebSocket  = require('ws');
+const WebSocket = require('ws');
 const bodyParser = require('body-parser'); // parser for post requests
 const messageHandler = require('./lib/message_handler');
 const bwl = require('./lib/blueworkslive');
+const rank = require('./lib/rank');
 
 const app = express();
 const server = http.createServer(app);
-const wss = new WebSocket.Server({ server });
+const wss = new WebSocket.Server({server});
 
 
-wss.on('connection', ws => {
-    ws.on('message',msg => messageHandler.processMessage(msg, ws));
-    /*ws.send(JSON.stringify({
-        result : "Hey there. How can I help you today?"
-    }));*/
-});
+wss.on('connection', ws => ws.on('message', msg => messageHandler.processMessage(msg, ws)));
 
 // Bootstrap application settings
 app.use(express.static('./public')); // load UI from public folder
 app.use(bodyParser.json({limit: "50mb"}));
-app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit:50000}));
+app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit: 50000}));
 
 app.get('/image/:imageName', bwl.imageFromBWL);
+app.post('/rank', rank.setRank);
 
 
 module.exports = server;
