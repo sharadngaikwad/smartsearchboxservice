@@ -15,16 +15,14 @@ const watsonCoversation = {
 
 //Config values for Watson Discovery Service running in Bluemix
 const watsonDiscovery = {
+    addDocUrl: 'https://gateway.watsonplatform.net/discovery/api/v1/environments/%s/collections/%s/documents?version=2016-12-01',
+    auth: 'YjExZGE2NDUtZDUyMS00NWE0LTg3NmItNDViYTdjMDVlYmM1Omo4eFIyRFMzVWo1SA==',
     username: 'b11da645-d521-45a4-876b-45ba7c05ebc5',
     password: 'j8xR2DS3Uj5H',
     version: 'v1',
     version_date: '2016-12-01',
     environment_id: 'ac74cff0-5b41-4f53-8bdb-0a9c6e188093',
-    defaultCollection: 'customerDB-UK',
-    collection_id: {
-        'customerDB-UK': '293f3445-116b-426b-9965-897f8842b2ab',
-        'cars': '52e46aeb-3d4a-4d0d-8a5f-69485a3285da'
-    }
+    collection_id: '0f6fff58-ee4c-44df-ad2d-6136deb615fc'
 };
 
 //Config values for Cloudant Service

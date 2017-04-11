@@ -17,15 +17,25 @@
 'use strict';
 
 const express = require('express'); // app server
+const multer  = require('multer');
 const http = require('http');
 const WebSocket = require('ws');
 const bodyParser = require('body-parser'); // parser for post requests
 const messageHandler = require('./lib/message_handler');
 const bwl = require('./lib/blueworkslive');
 const rank = require('./lib/rank');
+const upload = require('./lib/upload');
+
+const fs = require('fs');
+const dir = './discoveryUploads';
+
+if (!fs.existsSync(dir)){
+    fs.mkdirSync(dir);
+}
 
 const app = express();
 const server = http.createServer(app);
+const multerUpload = multer({ dest: 'discoveryUploads/' });
 const wss = new WebSocket.Server({server});
 
 
@@ -38,6 +48,7 @@ app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit: 50
 
 app.get('/image/:imageName', bwl.imageFromBWL);
 app.post('/rank', rank.setRank);
+app.post('/upload', multerUpload.single('file'), upload.uploadToDiscovery);
 
 
 module.exports = server;
