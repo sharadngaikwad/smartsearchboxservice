@@ -23,6 +23,7 @@ const WebSocket = require('ws');
 const bodyParser = require('body-parser'); // parser for post requests
 const messageHandler = require('./lib/message_handler');
 const bwl = require('./lib/blueworkslive');
+const discovery = require('./lib/watson_discovery');
 const rank = require('./lib/rank');
 const upload = require('./lib/upload');
 
@@ -48,6 +49,7 @@ app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit: 50
 
 app.get('/image/:imageName', bwl.imageFromBWL);
 app.post('/rank', rank.setRank);
+app.post('/discovery', discovery.watsonQuery);
 app.post('/upload', multerUpload.single('file'), upload.uploadToDiscovery);
 
 
