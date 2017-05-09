@@ -59,9 +59,16 @@ const retrieveAndRank = {
     "collection_name": 'tess'
 };
 
+const naturalLanguageUnderstanding = {
+    "username": "dc9ef050-2d43-464a-914b-f9b2638477f4",
+    "password": "AWcYJ6WIKqop",
+    "version_date": "2017-02-27"
+};
+
+
 //Config values for Redis cache
 const redis = {
-    url : 'redis://admin:OOQJXRSAFFKVXMMQ@bluemix-sandbox-dal-9-portal.7.dblayer.com:25114'
+    url: 'redis://admin:OOQJXRSAFFKVXMMQ@bluemix-sandbox-dal-9-portal.7.dblayer.com:25114'
 };
 
 const hostUrl = 'https://smartsearchboxservice.mybluemix.net';
@@ -74,6 +81,7 @@ module.exports = {
     snow: snow,
     alchemy: alchemy,
     retrieveAndRank: retrieveAndRank,
+    naturalLanguageUnderstanding: naturalLanguageUnderstanding,
     hostUrl: hostUrl,
     redis: redis
 };
