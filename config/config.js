@@ -6,11 +6,12 @@
 //Config values for Watson Conversation Service running in Bluemix
 const watsonCoversation = {
     url: 'https://gateway.watsonplatform.net/conversation/api',
-    version_date: '2016-10-21',
+    version_date: '2017-05-26',
     version: 'v1',
     workspaceId: '8dd2e891-2b13-41b7-9737-009a9d9e382b',
     workspaceUserName: 'c715a3d3-4510-4fca-9a1e-73b29e018291',
-    workspacePassword: 'gseiGfBJ5CNI'
+    workspacePassword: 'gseiGfBJ5CNI',
+    authToken: 'YzcxNWEzZDMtNDUxMC00ZmNhLTlhMWUtNzNiMjllMDE4MjkxOmdzZWlHZkJKNUNOSQ=='
 };
 
 //Config values for Watson Discovery Service running in Bluemix
@@ -29,7 +30,8 @@ const watsonDiscovery = {
 const cloudant = {
     username: "844d8c57-58b6-4391-8b52-50492bc81db2-bluemix",
     password: "acbb0d4c8c5a251db060d3890fc929afbb732c80ff7af948db5d4db512f327ea",
-    dbName: 'incident'
+    dbName: 'incident',
+    userHistoryDB: 'user-history'
 };
 
 //TODO: Need to get token of a user who has access through all workspaces in BWL
@@ -59,6 +61,7 @@ const retrieveAndRank = {
     "collection_name": 'tess'
 };
 
+//Config values for Watson Natural Language Understanding Service
 const naturalLanguageUnderstanding = {
     "username": "dc9ef050-2d43-464a-914b-f9b2638477f4",
     "password": "AWcYJ6WIKqop",

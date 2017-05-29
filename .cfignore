@@ -1,5 +1,7 @@
 node_modules/
 .idea/
+splitdocs/
+releases/
 coverage
 npm-debug.log
 readme_images
