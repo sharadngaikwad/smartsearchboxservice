@@ -38,13 +38,18 @@ const cloudant = {
 //Config values for BlueWorksLive
 const bwl = {
     url: 'https://ibm.blueworkslive.com/scr/api/FileDownload?fileItemId=',
-    authToken: 'c3VyeW1yMDFAaW4uaWJtLmNvbTpzbWFydGVrQDEyMw=='
+    authToken: 'c3VyeW1yMDFAaW4uaWJtLmNvbTpzbWFydGVrQDEyMzQ='
 };
 
 //Config values for ServiceNOW
 const snow = {
     url: 'https://hclmt.service-now.com/api/now/v1/table/incident',
-    authToken: 'S3VsZGlwLkt1bWFyQGhvbmRhLWV1LmNvbTpIb25kYUAzMjE='
+    authToken: 'S3VsZGlwLkt1bWFyQGhvbmRhLWV1LmNvbTpIb25kYUAzMjE=',
+    incidentStates: {
+        "open" : "1",
+        "work in progress": "2",
+        "pending": "-5"
+    }
 };
 
 //Config values for Alchemy service
