@@ -23,7 +23,8 @@ const watsonDiscovery = {
     version: 'v1',
     version_date: '2016-12-01',
     environment_id: 'ac74cff0-5b41-4f53-8bdb-0a9c6e188093',
-    collection_id: 'aace4214-d9f3-440f-9ef6-81f7228ea848'
+    collection_id: 'aace4214-d9f3-440f-9ef6-81f7228ea848',
+    maxScore: 5
 };
 
 //Config values for Cloudant Service
