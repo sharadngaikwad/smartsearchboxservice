@@ -32,7 +32,8 @@ const cloudant = {
     username: "844d8c57-58b6-4391-8b52-50492bc81db2-bluemix",
     password: "acbb0d4c8c5a251db060d3890fc929afbb732c80ff7af948db5d4db512f327ea",
     dbName: 'incident',
-    userHistoryDB: 'user-history'
+    userHistoryDB: 'user-history',
+    usersDB: 'users'
 };
 
 //TODO: Need to get token of a user who has access through all workspaces in BWL
@@ -82,6 +83,8 @@ const redis = {
 
 const hostUrl = 'https://smartsearchboxservice.mybluemix.net';
 
+const secretKey = 'omnibot';
+
 module.exports = {
     watsonCoversation: watsonCoversation,
     watsonDiscovery: watsonDiscovery,
@@ -92,5 +95,6 @@ module.exports = {
     retrieveAndRank: retrieveAndRank,
     naturalLanguageUnderstanding: naturalLanguageUnderstanding,
     hostUrl: hostUrl,
-    redis: redis
+    redis: redis,
+    secretKey: secretKey
 };

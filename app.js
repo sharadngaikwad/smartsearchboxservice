@@ -27,6 +27,7 @@ const discovery = require('./lib/watson_discovery');
 const conversation = require('./lib/watson_conversation');
 const rank = require('./lib/rank');
 const upload = require('./lib/upload');
+const userManagement = require('./lib/user_management');
 
 const fs = require('fs');
 const dir = './discoveryUploads';
@@ -52,6 +53,9 @@ app.get('/image/:imageName', bwl.imageFromBWL);
 app.post('/rank', rank.setRank);
 app.post('/discovery', discovery.watsonQuery);
 app.post('/entityValue', conversation.addNewAppNameEntity);
+app.post('/user',userManagement.checkUser);
+app.post('/activationCode', userManagement.verifyActivationCode);
+app.post('/activate', userManagement.activateUser);
 app.post('/upload', multerUpload.single('file'), upload.uploadToDiscovery);
 
 
