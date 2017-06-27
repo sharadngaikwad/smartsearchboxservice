@@ -45,7 +45,9 @@ const bwl = {
 
 //Config values for ServiceNOW
 const snow = {
-    url: 'https://hclmt.service-now.com/api/now/v1/table/incident',
+    tableAPIUrl: 'https://hclmt.service-now.com/api/now/v1/table/',
+    incidentTable: 'incident',
+    groupsTable: 'sys_user_grmember',
     authToken: 'S3VsZGlwLkt1bWFyQGhvbmRhLWV1LmNvbTpIb25kYUAzMjE=',
     incidentStates: {
         "open" : "1",
