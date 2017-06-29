@@ -1,0 +1,20 @@
+<h1 class="alignTextCenter">List of OmniBot Users</h1>
+<table id="usersTable" class="table table-hover">
+    <thead>
+    <tr>
+        <th>#</th>
+        <th>User</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let user of listOfUsers; let i = index">
+        <th scope="row">{{i+1}}</th>
+        <td>{{ user.email }}</td>
+        <td>
+            <button *ngIf="user.newUser" class="btn btn-success" (click)="grantAccess(user,'true')">Allow</button>
+            <button *ngIf="!user.newUser" class="btn btn-danger" (click)="grantAccess(user,'false')">Block</button>
+        </td>
+    </tr>
+    </tbody>
+</table>

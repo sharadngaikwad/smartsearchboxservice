@@ -19,10 +19,12 @@
 const express = require('express'); // app server
 const multer  = require('multer');
 const http = require('http');
+const path = require('path');
 const WebSocket = require('ws');
 const bodyParser = require('body-parser'); // parser for post requests
 const messageHandler = require('./lib/message_handler');
 const bwl = require('./lib/blueworkslive');
+const cloudantLib = require('./lib/cloudant');
 const discovery = require('./lib/watson_discovery');
 const conversation = require('./lib/watson_conversation');
 const rank = require('./lib/rank');
@@ -45,11 +47,15 @@ const wss = new WebSocket.Server({server});
 wss.on('connection', ws => ws.on('message', msg => messageHandler.processMessage(msg, ws)));
 
 // Bootstrap application settings
-app.use(express.static('./public')); // load UI from public folder
+//app.use(express.static('./public')); // load UI from public folder
 app.use(bodyParser.json({limit: "50mb"}));
 app.use(bodyParser.urlencoded({limit: "50mb", extended: true, parameterLimit: 50000}));
+app.use(express.static(path.join(__dirname, 'dist')));
+
+
 
 app.get('/image/:imageName', bwl.imageFromBWL);
+app.get('/users', cloudantLib.getListOfUsers);
 app.post('/rank', rank.setRank);
 app.post('/discovery', discovery.watsonQuery);
 app.post('/entityValue', conversation.addNewAppNameEntity);
@@ -57,6 +63,11 @@ app.post('/user',userManagement.checkUser);
 app.post('/activationCode', userManagement.verifyActivationCode);
 app.post('/activate', userManagement.activateUser);
 app.post('/upload', multerUpload.single('file'), upload.uploadToDiscovery);
+
+// Catch all other routes and return the index file
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, 'dist/index.html'));
+});
 
 
 module.exports = server;

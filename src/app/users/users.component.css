@@ -1,0 +1,12 @@
+#usersTable{
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 30px;
+    width: 80%;
+}
+
+.alignTextCenter{
+    text-align: center;
+    font-family: monospace;
+    margin-top: 10px;
+}
